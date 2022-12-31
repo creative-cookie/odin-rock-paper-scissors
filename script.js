@@ -1,5 +1,3 @@
-console.log('hello world');
-
 let computerSelection;
 let playerSelection;
 
