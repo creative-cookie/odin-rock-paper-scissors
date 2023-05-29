@@ -12,11 +12,13 @@ body, h1, h2, p{
 * { box-sizing: border-box; }
 
 .container{
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding-top: 1em;
+    gap: 1.125em;
+    justify-content: space-between;
 }
 
 header{
@@ -24,13 +26,30 @@ header{
     border-radius: 5px;
     padding: 1em 1.5em;
     box-shadow: 2px 2px 5px hsla(0,0%,0%,50%);
-    font-size: 1.25rem;
+    font-size: 0.875rem;
     color: rgb(255, 136, 0);
-    text-align: center;
+    align-self: flex-start;
+}
+
+.header__title--small{
+    display: block;
+    font-size: 1.125rem;
+    color: rgb(0, 47, 85);
+}
+
+
+.header__title--rock{
+    color: coral;
+}
+
+.header__title--paper{
+    color: royalblue;
+}
+.header__title--scissors{
+    color: lightseagreen;
 }
 
 .score{
-    margin-top: 1em;
     background: #fff;
     box-shadow: 2px 2px 5px hsla(0,0%,0%,50%);
     border-radius: 5px;
