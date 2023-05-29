@@ -1,4 +1,23 @@
 body{
     background-image: linear-gradient(rgb(81, 220, 255), rgb(96, 250, 255));
     height: 100vh;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body, h1, h2, p{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1em 1.5em;
+    margin: 0 auto;
+    margin-top: 1em;
+    width: 50%;
+    box-shadow: 2px 2px 5px hsla(0,0%,0%,50%);
+    font-size: 1.25rem;
+    color: rgb(255, 136, 0);
+    text-align: center;
 }
