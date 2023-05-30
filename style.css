@@ -1,8 +1,19 @@
+
+:root{
+    --clr-primary: 207, 100%, 17%;
+    --clr-secondary: 32, 100%, 50%;
+    --clr-dark: 0, 0%, 0%;
+
+    --clr-accent-rock: 0, 100%, 74%;
+    --clr-accent-paper: 225, 73%, 57%;
+    --clr-accent-scissors: 177, 70%, 41%;
+
+}
 body{
     background-image: linear-gradient(rgb(81, 220, 255), rgb(96, 250, 255));
     height: 100vh;
     font-family: 'Fira Sans', sans-serif;
-    color: rgb(0, 47, 85);
+    color: hsl(var(--clr-primary));
 }
 
 body, h1, h2, p{
@@ -26,35 +37,32 @@ header{
     background-color: #fff;
     border-radius: 5px;
     padding: 1em 1.5em;
-    box-shadow: 2px 2px 5px hsla(0,0%,0%,50%);
+    box-shadow: 2px 2px 5px hsla(var(--clr-dark),50%);
     font-size: 0.875rem;
-    color: rgb(255, 136, 0);
     align-self: flex-start;
 }
 
 .header__title--small{
     display: block;
     font-size: 1.125rem;
-    color: rgb(0, 47, 85);
 }
 
 
 .header__title--rock{
-    color: coral;
+    color: hsl(var(--clr-accent-rock));
 }
 
 .header__title--paper{
-    color: royalblue;
+    color: hsl(var(--clr-accent-paper));
 }
 .header__title--scissors{
-    color: lightseagreen;
+    color: hsl(var(--clr-accent-scissors));
 }
 
 .score{
     background: #fff;
-    box-shadow: 2px 2px 5px hsla(0,0%,0%,50%);
+    box-shadow: 2px 2px 5px hsla(var(--clr-dark),50%);
     border-radius: 5px;
-    color: rgb(0, 47, 85);
     font-weight: 700;
     padding: 1em 1.5em;
     align-self: flex-end;
@@ -86,12 +94,12 @@ header{
 
 .score__number{
     text-align: center;
-    color: rgb(255, 136, 0);
+    color: hsl(var(--clr-secondary));
     font-size:2rem;
 }
 
 .score__box{
-    border: 1px solid rgb(202, 202, 202);
+    border: 1px solid hsla(var(--clr-dark),20%);
     border-radius: 5px;
     
 }
@@ -100,7 +108,7 @@ header{
     background-color: #fff;
     border-radius: 5px;
     padding: 2em 2.5em;
-    box-shadow: 2px 2px 5px hsla(0,0%,0%,50%);
+    box-shadow: 2px 2px 5px hsla(var(--clr-dark),50%);
     width: 70%;
     margin: 0 auto;
     margin-top: 2em;
@@ -131,7 +139,7 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 20px solid orange;
+    border: 20px solid black;
     border-radius: 50%;
     height: 200px;
     width: 200px;
@@ -147,13 +155,13 @@ header{
 }
 
 .options--rock{
-    border-color: coral;
+    border-color: hsl(var(--clr-accent-rock));
 }
 
 .options--paper{
-    border-color: royalblue;
+    border-color: hsl(var(--clr-accent-paper));
 }
 
 .options--scissors{
-    border-color: lightseagreen;
+    border-color: hsl(var(--clr-accent-scissors));
 }
