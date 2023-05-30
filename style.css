@@ -2,6 +2,7 @@ body{
     background-image: linear-gradient(rgb(81, 220, 255), rgb(96, 250, 255));
     height: 100vh;
     font-family: 'Fira Sans', sans-serif;
+    color: rgb(0, 47, 85);
 }
 
 body, h1, h2, p{
@@ -12,7 +13,7 @@ body, h1, h2, p{
 * { box-sizing: border-box; }
 
 .container{
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -93,4 +94,66 @@ header{
     border: 1px solid rgb(202, 202, 202);
     border-radius: 5px;
     
+}
+
+.gameboard{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 2em 2.5em;
+    box-shadow: 2px 2px 5px hsla(0,0%,0%,50%);
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+
+.instructions{
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.icon{
+    width: 100px;
+    height: 100px;
+    margin-bottom: .25em;
+}
+
+.options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.options__btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 20px solid orange;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    padding: 2em;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+}
+
+.options__btn:hover,
+.options__btn:focus{
+    transform: scale(1.1);
+}
+
+.options--rock{
+    border-color: coral;
+}
+
+.options--paper{
+    border-color: royalblue;
+}
+
+.options--scissors{
+    border-color: lightseagreen;
 }
