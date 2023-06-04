@@ -64,6 +64,7 @@ header{
     box-shadow: 2px 2px 5px hsla(var(--clr-dark),50%);
     border-radius: 5px;
     font-weight: 700;
+    text-align: center;
     padding: 1em 1.5em;
     align-self: flex-end;
     display: grid;
@@ -75,7 +76,6 @@ header{
 
 .score__title{
     font-size: 1.5rem;
-    text-align: center;
 }
 
 .score__subtitle{
@@ -88,12 +88,7 @@ header{
     padding: .5em 1em;
 }
 
-.score__label{
-    text-align: center;
-}
-
 .score__number{
-    text-align: center;
     color: hsl(var(--clr-secondary));
     font-size:2rem;
 }
@@ -112,10 +107,10 @@ header{
     width: 70%;
     margin: 0 auto;
     margin-top: 2em;
+    text-align: center;
 }
 
 .instructions{
-    text-align: center;
     font-weight: 700;
     font-size: 1.5rem;
 }
@@ -149,8 +144,8 @@ header{
     font-weight: 700;
 }
 
-.options__btn:hover,
-.options__btn:focus{
+a.options__btn:hover,
+a.options__btn:focus{
     transform: scale(1.1);
 }
 
@@ -164,4 +159,45 @@ header{
 
 .options--scissors{
     border-color: hsl(var(--clr-accent-scissors));
+}
+
+.hidden{
+    display: none;
+}
+
+.results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2em;
+}
+
+.versus{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.next-round{
+    margin: 0 auto;
+    padding: 1em 1.25em;
+    background-color: hsl(var(--clr-secondary));
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 2em;
+    font-size: 1.125rem;
+}
+
+.next-round:hover,
+.next-round:focus{
+    background-color: hsl(var(--clr-primary));
+}
+
+.results__label{
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: .75em;
 }
