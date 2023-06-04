@@ -12,31 +12,34 @@
     <title>The Odin Project - Rock Paper Scissors Challenge</title>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1 class="header__title">
-                <span class="header__title--small">The Odin Project</span>
-              
-                <span class="header__title--rock">Rock</span> 
-                <span class="header__title--paper">Paper</span> 
-                <span class="header__title--scissors">Scissors</span>
-                </h1>
+    <div class="container flex flex-row justify-between">
+        <header class="self-start fs-200 bg-rounded">
+            <p class="fw-700">The Odin Project</p>
+            <h1>
+                <span class="text-rock">Rock</span> 
+                <span class="text-paper">Paper</span> 
+                <span class="text-scissors">Scissors</span>
+            </h1>
         </header>
 
-        <div class="score">
-            <p class="score__title">Score <span class="score__subtitle">(5 to win)</span></p>
-            <div class="score__box">
-                <p class="score__label">Player <br>Score</p>
-                <p class="score__number" id="player-score">0</p>
+        <div class="score bg-rounded text-center fw-700">
+            <div>
+                <p class="fs-500">Score</p>
+                <p class="fs-200 fw-400">(5 to win)</p>
             </div>
             <div class="score__box">
-                <p class="score__label">Computer <br>Score</p>
-                <p class="score__number" id="computer-score">0</p>
+                <p>Player <br>Score</p>
+                <p class="fs-600 text-secondary" id="player-score">0</p>
+            </div>
+
+            <div class="score__box">
+                <p>Computer <br>Score</p>
+                <p class="fs-600 text-secondary" id="computer-score">0</p>
             </div>
         </div>
     </div>
 
-    <div class="gameboard">
+    <div class="gameboard bg-rounded container">
         <p class="instructions">Click a button below to select your move:</p>
         <div class="options">
             <a href="#" class="options__btn options--rock">
@@ -54,7 +57,7 @@
         </div>
     </div>
 
-    <div class="gameboard hidden">
+    <div class="gameboard bg-rounded hidden">
         <p class="instructions" id="feedback">This round is a tie.</p>
         <div class="results">
             <div class="results__container">

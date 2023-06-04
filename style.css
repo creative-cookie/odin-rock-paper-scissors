@@ -1,72 +1,117 @@
+/*-------------------*/
+/* Custom Properties */
+/*-------------------*/
 
 :root{
     --clr-primary: 207, 100%, 17%;
     --clr-secondary: 32, 100%, 50%;
+
     --clr-dark: 0, 0%, 0%;
+    --clr-light: 0, 0%, 100%;
 
     --clr-accent-rock: 0, 100%, 74%;
     --clr-accent-paper: 225, 73%, 57%;
     --clr-accent-scissors: 177, 70%, 41%;
 
-}
-body{
-    background-image: linear-gradient(rgb(81, 220, 255), rgb(96, 250, 255));
-    height: 100vh;
-    font-family: 'Fira Sans', sans-serif;
-    color: hsl(var(--clr-primary));
+    --fs-600: 2rem;
+    --fs-500: 1.5rem;
+    --fs-400: 1.125rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+
+    --fw-700: 700;
+    --fw-400: 400;
 }
 
-body, h1, h2, p{
+/*-------*/
+/* Reset */
+/*-------*/
+
+body{
+    background-image: linear-gradient(rgb(81, 220, 255), rgb(96, 250, 255));
+    min-height: 100vh;
+    font-family: 'Fira Sans', sans-serif;
+    color: hsl(var(--clr-primary));
+    margin: 0;
+    padding: 1em;
+}
+
+h1, h2, p{
     margin: 0;
     padding: 0;
 }
 
 * { box-sizing: border-box; }
 
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/*-----------------*/
+/* Utility Classes */
+/*-----------------*/
+
+/* layout */
+.flex{display: flex;}
+.flex-row{flex-direction: row;}
+.justify-between{justify-content: space-between;}
+.self-start{align-self: flex-start;}
+
 .container{
     width: 70%;
     margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    padding-top: 1em;
-    gap: 1.125em;
-    justify-content: space-between;
 }
 
-header{
+.flow > * + * {
+    margin-top: var(--flow-space, 1rem);
+}
+
+/* general */
+.bg-rounded{
     background-color: #fff;
     border-radius: 5px;
     padding: 1em 1.5em;
     box-shadow: 2px 2px 5px hsla(var(--clr-dark),50%);
-    font-size: 0.875rem;
-    align-self: flex-start;
 }
 
-.header__title--small{
-    display: block;
-    font-size: 1.125rem;
-}
+/* colors */
+
+.bg-primary {background-color: hsl( var(--clr-primary));}
+.bg-secondary {background-color: hsl( var(--clr-secondary));}
+.bg-light {background-color: hsl( var(--clr-light));}
+
+.text-primary {color: hsl( var(--clr-primary));}
+.text-secondary {color: hsl( var(--clr-secondary));}
+.text-white {color: hsl( var(--clr-white));}
+
+.text-rock {color: hsl( var(--clr-accent-rock));}
+.text-paper {color: hsl( var(--clr-accent-paper));}
+.text-scissors {color: hsl( var(--clr-accent-scissors));}
+
+.border-rock {border-color: hsl(var(--clr-accent-rock));}
+.border-paper {border-color: hsl(var(--clr-accent-paper));}
+.border-scissors {border-color: hsl(var(--clr-accent-scissors));}
+
+/* typography */
+
+.fs-600{font-size: var(--fs-600);}
+.fs-500{font-size: var(--fs-500);}
+.fs-400{font-size: var(--fs-400);}
+.fs-300{font-size: var(--fs-300);}
+.fs-200{font-size: var(--fs-200);}
+
+.fw-400{font-weight: var(--fw-400);}
+.fw-700{font-weight: var(--fw-700);}
+
+.text-center{text-align:center}
 
 
-.header__title--rock{
-    color: hsl(var(--clr-accent-rock));
-}
-
-.header__title--paper{
-    color: hsl(var(--clr-accent-paper));
-}
-.header__title--scissors{
-    color: hsl(var(--clr-accent-scissors));
-}
+/*------------*/
+/* Components */
+/*------------*/
 
 .score{
-    background: #fff;
-    box-shadow: 2px 2px 5px hsla(var(--clr-dark),50%);
-    border-radius: 5px;
-    font-weight: 700;
-    text-align: center;
-    padding: 1em 1.5em;
-    align-self: flex-end;
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
@@ -74,39 +119,18 @@ header{
     gap: 1.125em;
 }
 
-.score__title{
-    font-size: 1.5rem;
-}
-
-.score__subtitle{
-    font-size: .875rem;
-    font-weight: 400;
-    display: block;
-}
-
 .score > * {
     padding: .5em 1em;
-}
-
-.score__number{
-    color: hsl(var(--clr-secondary));
-    font-size:2rem;
 }
 
 .score__box{
     border: 1px solid hsla(var(--clr-dark),20%);
     border-radius: 5px;
-    
 }
 
 .gameboard{
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 2em 2.5em;
-    box-shadow: 2px 2px 5px hsla(var(--clr-dark),50%);
-    width: 70%;
-    margin: 0 auto;
     margin-top: 2em;
+    padding: 2em 2.5em;
     text-align: center;
 }
 
