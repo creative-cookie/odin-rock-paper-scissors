@@ -155,14 +155,14 @@ img{
 }
 
 .options__btn{
-    border-width: 20px;
-    border-style: solid;
-    border-radius: var(--border-radius-full);;
     height: 200px;
     width: 200px;
     padding: 2em;
     text-decoration: none;
     color: inherit;
+    border-width: 20px;
+    border-style: solid;
+    border-radius: var(--border-radius-full);
 }
 
 a.options__btn:hover,
@@ -171,12 +171,12 @@ a.options__btn:focus{
 }
 
 .action-btn{
+    display: inline-block;
     margin-inline: auto;
     padding: 1em 1.5em;
-    background-color: hsl(var(--clr-primary));
     text-decoration: none;
-    border-radius: var(--border-radius-md);;
-    display: inline-block;
+    background-color: hsl(var(--clr-primary));
+    border-radius: var(--border-radius-md);
 }
 
 .action-btn:hover,
