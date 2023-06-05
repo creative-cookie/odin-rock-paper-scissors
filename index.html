@@ -12,7 +12,7 @@
     <title>The Odin Project - Rock Paper Scissors Challenge</title>
 </head>
 <body>
-    <div class="container flex flex-row justify-between">
+    <div class="container mt-sm flex flex-row justify-between">
         <header class="self-start fs-200 bg-rounded">
             <p class="fw-700">The Odin Project</p>
             <h1>
@@ -22,7 +22,7 @@
             </h1>
         </header>
 
-        <div class="score bg-rounded text-center fw-700">
+        <div class="score gap-sm bg-rounded text-center fw-700">
             <div>
                 <p class="fs-500">Score</p>
                 <p class="fs-200 fw-400">(5 to win)</p>
@@ -39,44 +39,49 @@
         </div>
     </div>
 
-    <div class="gameboard bg-rounded container">
-        <p class="instructions">Click a button below to select your move:</p>
-        <div class="options">
-            <a href="#" class="options__btn options--rock">
+    <div class="gameboard container mt-md bg-rounded text-center fw-700">
+        <p class="fs-500">Click a button below to select your move:</p>
+
+        <div class="mt-md flex gap-md justify-center">
+            <a href="#" class="options__btn border-rock flex flex-column justify-center">
                 <img class="icon" src="images/hand-back-fist-regular.svg" alt="rock">
-                <p class="options--label">Rock</p>
+                <p>Rock</p>
             </a>
-            <a href="#" class="options__btn options--paper">
+            <a href="#" class="options__btn border-paper flex flex-column justify-center">
                 <img class="icon" src="images/hand-regular.svg" alt="paper">
-                Paper
+                <p>Paper</p>
             </a>
-            <a href="#" class="options__btn options--scissors">
+            <a href="#" class="options__btn border-scissors flex flex-column justify-center">
                 <img class="icon" src="images/hand-scissors-regular.svg" alt="scissors">
-                Scissors
+                <p>Scissors</p>
             </a>
         </div>
     </div>
 
-    <div class="gameboard bg-rounded hidden">
-        <p class="instructions" id="feedback">This round is a tie.</p>
-        <div class="results">
-            <div class="results__container">
-                <div class="results__label">Player's Choice</div>
-                <div class="options__btn options--rock" id="player-choice">
+    <div class="gameboard container mt-md bg-rounded text-center fw-700 hidden">
+        <p class="fs-500" id="feedback">This round is a tie.</p>
+
+        <div class="mt-md flex gap-md justify-center items-center">
+            <div>
+                <div class="fs-400">Player's Choice</div>
+                <div class="options__btn mt-sm border-rock flex flex-column justify-center" id="player-choice">
                     <img class="icon" src="images/hand-back-fist-regular.svg" alt="rock">
-                    <p class="options--label">Rock</p>
+                    <p>Rock</p>
                 </div>
              </div>
-            <div class="versus">VS</div>
-            <div class="results__container">
-                <div class="results__label">Computer's Choice</div>
-                <div class="options__btn options--rock" id="computer-choice">
+
+            <div class="fs-600"><br>VS</div>
+
+            <div>
+                <div class="fs-400">Computer's Choice</div>
+                <div class="options__btn mt-sm border-rock flex flex-column justify-center" id="computer-choice">
                     <img class="icon" src="images/hand-back-fist-regular.svg" alt="rock">
-                    <p class="options--label">Rock</p>
+                    <p>Rock</p>
                 </div>
             </div>
         </div>
-        <a href="#" class="next-round">
+
+        <a href="#" class="action-btn mt-md text-light fw-700 fs-400">
             Play next round
         </a>
     </div>
