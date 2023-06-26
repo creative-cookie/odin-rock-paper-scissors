@@ -1,5 +1,24 @@
-let computerSelection;
-let playerSelection;
+// Declare variables to store game info
+let playerChoice;
+let computerChoice;
+let playerScore;
+let computerScore;
+let feedbackText;
+let gameCount;
+
+//Get elements from DOM and store in variables
+const playerScoreContainer = document.getElementById("player-score-container");
+const computerScoreContainer = document.getElementById("computer-score-container");
+const playerChoiceContainer = document.getElementById("player-choice-container");
+const computerChoiceContainer = document.getElementById("computer-choice-container");
+const playerChoiceIcon = document.getElementById("player-choice-icon");
+const computerChoiceIcon = document.getElementById("computer-choice-icon");
+const playerChoiceLabel = document.getElementById("player-choice-label");
+const computerChoiceLabel = document.getElementById("computer-choice-label");
+const feedbackContainer = document.getElementById("feedback-container");
+const gameBoardContainer = document.getElementById("gameboard-container");
+const resultsContainer = document.getElementById("results-container");
+const playerChoiceButtons = document.querySelectorAll("[data-choice]");
 
 function getComputerChoice(){
     let randomNum = Math.floor(Math.random() * 3) + 1;
