@@ -29,37 +29,37 @@
             </div>
             <div class="score__box">
                 <p>Player <br>Score</p>
-                <p class="fs-600 text-secondary" id="player-score">0</p>
+                <p class="fs-600 text-secondary" id="player-score-container">0</p>
             </div>
 
             <div class="score__box">
                 <p>Computer <br>Score</p>
-                <p class="fs-600 text-secondary" id="computer-score">0</p>
+                <p class="fs-600 text-secondary" id="computer-score-container">0</p>
             </div>
         </div>
     </div>
 
-    <div class="gameboard container bg-rounded mt-md text-center fw-700">
+    <div class="gameboard container bg-rounded mt-md text-center fw-700" id="gameboard-container">
         <p class="fs-500">Click a button below to select your move:</p>
 
         <div class="mt-md flex gap-md justify-center">
-            <a href="#" class="options__btn border-rock flex flex-column justify-center">
+            <a href="#" class="options__btn border-rock flex flex-column justify-center" data-choice="Rock">
                 <img class="icon" src="images/hand-back-fist-regular.svg" alt="rock">
                 <p>Rock</p>
             </a>
-            <a href="#" class="options__btn border-paper flex flex-column justify-center">
+            <a href="#" class="options__btn border-paper flex flex-column justify-center" data-choice="Paper">
                 <img class="icon" src="images/hand-regular.svg" alt="paper">
                 <p>Paper</p>
             </a>
-            <a href="#" class="options__btn border-scissors flex flex-column justify-center">
+            <a href="#" class="options__btn border-scissors flex flex-column justify-center" data-choice="Scissors">
                 <img class="icon" src="images/hand-scissors-regular.svg" alt="scissors">
                 <p>Scissors</p>
             </a>
         </div>
     </div>
 
-    <div class="gameboard container bg-rounded mt-md text-center fw-700 hidden">
-        <p class="fs-500" id="feedback">This round is a tie.</p>
+    <div class="gameboard container bg-rounded mt-md text-center fw-700 hidden" id="results-container">
+        <p class="fs-500" id="feedback-container">This round is a tie.</p>
 
         <div class="mt-md flex gap-md justify-center items-center">
             <div>
