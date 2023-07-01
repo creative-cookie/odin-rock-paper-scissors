@@ -16,7 +16,7 @@ const computerChoiceIcon = document.getElementById("computer-choice-icon");
 const playerChoiceLabel = document.getElementById("player-choice-label");
 const computerChoiceLabel = document.getElementById("computer-choice-label");
 const feedbackContainer = document.getElementById("feedback-container");
-const gameBoardContainer = document.getElementById("gameboard-container");
+const gameboardContainer = document.getElementById("gameboard-container");
 const resultsContainer = document.getElementById("results-container");
 const playerChoiceButtons = document.querySelectorAll("[data-choice]");
 const actionButton = document.getElementById("action-btn");
@@ -28,7 +28,7 @@ function newGame(){
     playerScoreContainer.innerText = playerScore;
     computerScoreContainer.innerText = computerScore;
 
-    //actionButton.removeEventListener("click", newGame);
+    actionButton.removeEventListener("click", newGame);
 
     enableChoiceBtns();
 
@@ -51,9 +51,6 @@ function disableChoiceBtns(){
         button.removeEventListener("click", setChoices);
     }
 }
-
-newGame();
-
 
 function generateComputerChoice(){
     let randomNum = Math.floor(Math.random() * 3) + 1;
@@ -111,7 +108,7 @@ function formatResults(){
 
     setActionButton();
 
-// 	EXECUTE displayResults
+    displayResults();
 }
 
 function setBorderColor(choice, container){
@@ -154,7 +151,29 @@ function setActionButton(){
     }
 }
 
-function nextRound(){
-    console.log('next round');
+function displayResults(){
+    toggleHidden(gameboardContainer);
+ 	toggleHidden(resultsContainer);
+
+    updateScore();
 }
+
+function toggleHidden(container){
+    container.classList.toggle("hidden");
+}
+
+function updateScore(){
+    playerScoreContainer.innerText = playerScore;
+    computerScoreContainer.innerText = computerScore;
+}
+
+function nextRound(){
+    enableChoiceBtns();
+    actionButton.removeEventListener("click", nextRound);
+
+    toggleHidden(gameboardContainer);
+    toggleHidden(resultsContainer);
+}
+
+newGame();
 
