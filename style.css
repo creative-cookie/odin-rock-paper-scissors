@@ -179,7 +179,7 @@ a.options__btn:focus{
     border-radius: var(--border-radius-md);
 }
 
-.action-btn:hover,
-.action-btn:focus{
+#action-btn:hover,
+#action-btn:focus{
     background-color: hsl(var(--clr-secondary));
 }
