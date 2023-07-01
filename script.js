@@ -158,20 +158,3 @@ function nextRound(){
     console.log('next round');
 }
 
-// function game(){
-//     for(let i = 0; i < 5; i++){
-//         computerSelection = getComputerChoice();
-//         playerSelection = getUserChoice();
-
-//         if(playerSelection !== 'no response'){
-//             console.log(playRound(computerSelection, playerSelection));
-//         } else {
-//             console.log('User declined to play');
-//             break;
-//         }
-//     }
-//     console.log('The game has ended');
-// }
-
-// game();
-
