@@ -4,7 +4,7 @@ let computerChoice;
 let playerScore;
 let computerScore;
 let feedbackText;
-let gameCount;
+let gameCount = 0;
 
 //Get elements from DOM and store in variables
 const playerScoreContainer = document.getElementById("player-score-container");
@@ -20,73 +20,130 @@ const gameBoardContainer = document.getElementById("gameboard-container");
 const resultsContainer = document.getElementById("results-container");
 const playerChoiceButtons = document.querySelectorAll("[data-choice]");
 
-function getComputerChoice(){
+
+function newGame(){
+	playerScore = 0;
+    computerScore = 0;
+    playerScoreContainer.innerText = playerScore;
+    computerScoreContainer.innerText = computerScore;
+
+    //actionButton.removeEventListener("click", newGame);
+
+    enableChoiceBtns();
+
+	if (gameCount > 0){
+        toggleHidden(gameboardContainer);
+        toggleHidden(resultsContainer);
+    }
+
+	gameCount++;
+}
+
+function enableChoiceBtns(){
+    for(const button of playerChoiceButtons){
+        button.addEventListener("click", setChoices);
+    }
+}
+
+function disableChoiceBtns(){
+    for(const button of playerChoiceButtons){
+        button.removeEventListener("click", setChoices);
+    }
+}
+
+newGame();
+
+
+function generateComputerChoice(){
     let randomNum = Math.floor(Math.random() * 3) + 1;
-    let computerChoice;
 
     if(randomNum === 1){
-        computerChoice = "rock";
+        return "Rock";
     } else if(randomNum === 2){
-        computerChoice = "paper";
+        return "Paper";
     } else{
-        computerChoice = "scissors";
+        return "Scissors";
     }
 
-    return computerChoice;
 }
 
-function getUserChoice(){
-    let playerChoice;
+function setChoices(e){
+    disableChoiceBtns();
+    playerChoice = e.currentTarget.dataset.choice;
+    computerChoice = generateComputerChoice();
 
-    while(true){
-        playerChoice = prompt('Enter "Rock", "Paper", or "Scissors": ');
-        if(playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors'){
-            break;
-        } else if (playerChoice === null){
-            playerChoice = 'no response';
-            break;
-        }
-        else{
-            alert('Enter a valid response');
-            continue;
-        }
-    }
+    console.log("Player: " + playerChoice);
+    console.log("Computer: " + computerChoice);
 
-    return playerChoice.toLowerCase();
+    playRound(playerChoice, computerChoice);
+  
 }
 
-function capitalize(str){
-    return str.charAt(0).toUpperCase() + str.substring(1);
-}
-
-function playRound(computerSelection, playerSelection){
+function playRound(playerSelection, computerSelection){
     if(computerSelection === playerSelection){
-        return 'It was a tie';
+        feedbackContainer.innerText = 'It was a tie';
     } else if(computerSelection === 'rock' && playerSelection === 'paper'){
-        return 'Paper beats Rock. You win!';
+        feedbackContainer.innerText = 'Paper beats Rock. You win!';
+        playerScore++;
     } else if(computerSelection === 'paper' && playerSelection === 'scissors'){
-        return 'Scissors beats Paper. You win!';
+        feedbackContainer.innerText = 'Scissors beats Paper. You win!';
+        playerScore++;
     } else if(computerSelection === 'scissors' && playerSelection === 'rock'){
-        return 'Rock beats Scissors. You win!';
+        feedbackContainer.innerText = 'Rock beats Scissors. You win!';
+        playerScore++;
     } else{
-        return `${capitalize(computerSelection)} beats ${capitalize(playerSelection)}. You lose!`
+        feedbackContainer.innerText = `${computerSelection} beats ${playerSelection}. You lose!`
+        computerScore++;
     }
+
+    formatResults();
 }
 
-function game(){
-    for(let i = 0; i < 5; i++){
-        computerSelection = getComputerChoice();
-        playerSelection = getUserChoice();
+function formatResults(){
+// 	EXECUTE setBorderColor(playerChoice, playerChoiceContainer)
+// 	EXECUTE setBorderColor(computerChoice, computerChoiceContainer)
 
-        if(playerSelection !== 'no response'){
-            console.log(playRound(computerSelection, playerSelection));
-        } else {
-            console.log('User declined to play');
-            break;
-        }
-    }
-    console.log('The game has ended');
+// 	EXECUTE setIcon(playerChoice, playerChoiceIcon)
+// 	EXECUTE setIcon(computerChoice, computerChoiceIcon)
+
+// 	EXECUTE setChoiceLabel(playerChoice, playerChoiceLabel)
+// 	EXECUTE setChoiceLabel(computerChoice, computerChoiceLabel)
+
+// 	EXECUTE setFeedback(feedbackText, feedbackContainer)
+
+// 	IF playerScore == 5 OR computerScore == 5
+// 		SET actionButton text to ‘New Game’
+// 		ADD EVENT LISTENER to trigger FUNCTION newGame
+// 	ELSE
+// 		SET actionButton text to ‘Next Round’
+// 		ADD EVENT LISTENER to trigger FUNCTION nextRound
+
+// 	EXECUTE displayResults
 }
 
-game();
+function setBorderColor(choice, container){
+	// IF choice == ‘rock’
+	// 	SET border color of container to rock-color
+	// ELSE IF choice == ‘paper’
+	// 	SET border color of container to paper-color
+	// ELSE
+	// 	SET border color of container to scissor-color
+}
+
+// function game(){
+//     for(let i = 0; i < 5; i++){
+//         computerSelection = getComputerChoice();
+//         playerSelection = getUserChoice();
+
+//         if(playerSelection !== 'no response'){
+//             console.log(playRound(computerSelection, playerSelection));
+//         } else {
+//             console.log('User declined to play');
+//             break;
+//         }
+//     }
+//     console.log('The game has ended');
+// }
+
+// game();
 
