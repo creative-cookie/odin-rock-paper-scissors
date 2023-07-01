@@ -76,7 +76,6 @@ function setChoices(e){
     console.log("Computer: " + computerChoice);
 
     playRound(playerChoice, computerChoice);
-  
 }
 
 function playRound(playerSelection, computerSelection){
@@ -100,8 +99,8 @@ function playRound(playerSelection, computerSelection){
 }
 
 function formatResults(){
-// 	EXECUTE setBorderColor(playerChoice, playerChoiceContainer)
-// 	EXECUTE setBorderColor(computerChoice, computerChoiceContainer)
+    setBorderColor(playerChoice, playerChoiceContainer);
+    setBorderColor(computerChoice, computerChoiceContainer);
 
 // 	EXECUTE setIcon(playerChoice, playerChoiceIcon)
 // 	EXECUTE setIcon(computerChoice, computerChoiceIcon)
@@ -122,12 +121,19 @@ function formatResults(){
 }
 
 function setBorderColor(choice, container){
-	// IF choice == ‘rock’
-	// 	SET border color of container to rock-color
-	// ELSE IF choice == ‘paper’
-	// 	SET border color of container to paper-color
-	// ELSE
-	// 	SET border color of container to scissor-color
+    if (choice === 'Rock'){
+        container.classList.add("border-rock");
+        container.classList.remove("border-paper");
+        container.classList.remove("border-scissors");
+    } else if(choice ==='Paper'){
+        container.classList.remove("border-rock");
+        container.classList.add("border-paper");
+        container.classList.remove("border-scissors");
+    } else {
+        container.classList.remove("border-rock");
+        container.classList.remove("border-paper");
+        container.classList.add("border-scissors");
+    }
 }
 
 // function game(){
