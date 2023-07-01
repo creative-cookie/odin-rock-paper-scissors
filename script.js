@@ -79,13 +79,13 @@ function setChoices(e){
 function playRound(playerSelection, computerSelection){
     if(computerSelection === playerSelection){
         feedbackContainer.innerText = 'It was a tie';
-    } else if(computerSelection === 'rock' && playerSelection === 'paper'){
+    } else if(computerSelection === 'Rock' && playerSelection === 'Paper'){
         feedbackContainer.innerText = 'Paper beats Rock. You win!';
         playerScore++;
-    } else if(computerSelection === 'paper' && playerSelection === 'scissors'){
+    } else if(computerSelection === 'Paper' && playerSelection === 'Scissors'){
         feedbackContainer.innerText = 'Scissors beats Paper. You win!';
         playerScore++;
-    } else if(computerSelection === 'scissors' && playerSelection === 'rock'){
+    } else if(computerSelection === 'Scissors' && playerSelection === 'Rock'){
         feedbackContainer.innerText = 'Rock beats Scissors. You win!';
         playerScore++;
     } else{
