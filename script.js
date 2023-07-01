@@ -21,7 +21,7 @@ const resultsContainer = document.getElementById("results-container");
 const playerChoiceButtons = document.querySelectorAll("[data-choice]");
 const actionButton = document.getElementById("action-btn");
 
-
+//Start new game
 function newGame(){
 	playerScore = 0;
     computerScore = 0;
@@ -32,6 +32,8 @@ function newGame(){
 
     enableChoiceBtns();
 
+    //Don't toggle class if page was just loaded
+    //Only toggle on subsequent new games
 	if (gameCount > 0){
         toggleHidden(gameboardContainer);
         toggleHidden(resultsContainer);
@@ -65,17 +67,16 @@ function generateComputerChoice(){
 
 }
 
+//Set choices of player and computer
 function setChoices(e){
     disableChoiceBtns();
     playerChoice = e.currentTarget.dataset.choice;
     computerChoice = generateComputerChoice();
 
-    console.log("Player: " + playerChoice);
-    console.log("Computer: " + computerChoice);
-
     playRound(playerChoice, computerChoice);
 }
 
+//Determine winner
 function playRound(playerSelection, computerSelection){
     if(computerSelection === playerSelection){
         feedbackContainer.innerText = 'It was a tie';
@@ -96,6 +97,7 @@ function playRound(playerSelection, computerSelection){
     formatResults();
 }
 
+//Format results of match
 function formatResults(){
     setBorderColor(playerChoice, playerChoiceContainer);
     setBorderColor(computerChoice, computerChoiceContainer);
@@ -151,6 +153,7 @@ function setActionButton(){
     }
 }
 
+//Display results of match
 function displayResults(){
     toggleHidden(gameboardContainer);
  	toggleHidden(resultsContainer);
