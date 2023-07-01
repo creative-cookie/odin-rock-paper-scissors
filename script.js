@@ -20,6 +20,7 @@ const gameboardContainer = document.getElementById("gameboard-container");
 const resultsContainer = document.getElementById("results-container");
 const playerChoiceButtons = document.querySelectorAll("[data-choice]");
 const actionButton = document.getElementById("action-btn");
+const declareWinnerContainer = document.getElementById("declare-winner-container");
 
 //Start new game
 function newGame(){
@@ -37,6 +38,7 @@ function newGame(){
 	if (gameCount > 0){
         toggleHidden(gameboardContainer);
         toggleHidden(resultsContainer);
+        toggleHidden(declareWinnerContainer);
     }
 
 	gameCount++;
@@ -159,6 +161,8 @@ function displayResults(){
  	toggleHidden(resultsContainer);
 
     updateScore();
+
+    declareWinner();
 }
 
 function toggleHidden(container){
@@ -168,6 +172,16 @@ function toggleHidden(container){
 function updateScore(){
     playerScoreContainer.innerText = playerScore;
     computerScoreContainer.innerText = computerScore;
+}
+
+function declareWinner(){
+    if(playerScore === 5){
+        declareWinnerContainer.innerText = "You've reached a score of 5. You win!"
+        toggleHidden(declareWinnerContainer);
+    } else if(computerScore === 5){
+        declareWinnerContainer.innerText = "The computer reached a score of 5. You lose!"
+        toggleHidden(declareWinnerContainer);
+    }
 }
 
 function nextRound(){
