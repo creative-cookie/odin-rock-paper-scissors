@@ -105,10 +105,8 @@ function formatResults(){
     setIcon(playerChoice, playerChoiceIcon);
     setIcon(computerChoice, computerChoiceIcon);
 
-// 	EXECUTE setChoiceLabel(playerChoice, playerChoiceLabel)
-// 	EXECUTE setChoiceLabel(computerChoice, computerChoiceLabel)
-
-// 	EXECUTE setFeedback(feedbackText, feedbackContainer)
+    setChoiceLabel(playerChoice, playerChoiceLabel);
+    setChoiceLabel(computerChoice, computerChoiceLabel);
 
 // 	IF playerScore == 5 OR computerScore == 5
 // 		SET actionButton text to ‘New Game’
@@ -144,6 +142,10 @@ function setIcon(choice, icon){
     } else {
         icon.src = "images/hand-scissors-regular.svg";
     }
+}
+
+function setChoiceLabel(choice, label){
+        label.innerText = choice;
 }
 
 // function game(){
