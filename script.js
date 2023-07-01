@@ -102,8 +102,8 @@ function formatResults(){
     setBorderColor(playerChoice, playerChoiceContainer);
     setBorderColor(computerChoice, computerChoiceContainer);
 
-// 	EXECUTE setIcon(playerChoice, playerChoiceIcon)
-// 	EXECUTE setIcon(computerChoice, computerChoiceIcon)
+    setIcon(playerChoice, playerChoiceIcon);
+    setIcon(computerChoice, computerChoiceIcon);
 
 // 	EXECUTE setChoiceLabel(playerChoice, playerChoiceLabel)
 // 	EXECUTE setChoiceLabel(computerChoice, computerChoiceLabel)
@@ -133,6 +133,16 @@ function setBorderColor(choice, container){
         container.classList.remove("border-rock");
         container.classList.remove("border-paper");
         container.classList.add("border-scissors");
+    }
+}
+
+function setIcon(choice, icon){
+    if (choice === 'Rock'){
+        icon.src = "images/hand-back-fist-regular.svg";
+    } else if(choice ==='Paper'){
+        icon.src = "images/hand-regular.svg";
+    } else {
+        icon.src = "images/hand-scissors-regular.svg";
     }
 }
 
