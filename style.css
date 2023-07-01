@@ -170,7 +170,7 @@ a.options__btn:focus{
     transform: scale(1.1);
 }
 
-.action-btn{
+#action-btn{
     display: inline-block;
     margin-inline: auto;
     padding: 1em 1.5em;

@@ -19,6 +19,7 @@ const feedbackContainer = document.getElementById("feedback-container");
 const gameBoardContainer = document.getElementById("gameboard-container");
 const resultsContainer = document.getElementById("results-container");
 const playerChoiceButtons = document.querySelectorAll("[data-choice]");
+const actionButton = document.getElementById("action-btn");
 
 
 function newGame(){
@@ -108,12 +109,7 @@ function formatResults(){
     setChoiceLabel(playerChoice, playerChoiceLabel);
     setChoiceLabel(computerChoice, computerChoiceLabel);
 
-// 	IF playerScore == 5 OR computerScore == 5
-// 		SET actionButton text to ‘New Game’
-// 		ADD EVENT LISTENER to trigger FUNCTION newGame
-// 	ELSE
-// 		SET actionButton text to ‘Next Round’
-// 		ADD EVENT LISTENER to trigger FUNCTION nextRound
+    setActionButton();
 
 // 	EXECUTE displayResults
 }
@@ -146,6 +142,20 @@ function setIcon(choice, icon){
 
 function setChoiceLabel(choice, label){
         label.innerText = choice;
+}
+
+function setActionButton(){
+    if(playerScore === 5 || computerScore === 5){
+        actionButton.innerText = "New Game";
+        actionButton.addEventListener("click", newGame);
+    } else {
+        actionButton.innerText = "Next Round";
+        actionButton.addEventListener("click", nextRound);
+    }
+}
+
+function nextRound(){
+    console.log('next round');
 }
 
 // function game(){
